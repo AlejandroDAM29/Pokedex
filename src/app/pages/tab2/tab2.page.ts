@@ -10,7 +10,7 @@ export class Tab2Page {
 
 
   ideas: string[]=['pikachu','charizard','bulbasaur','squirtle']
-
+//Asasasaas
   offset=0;
   pokemon = [];
   value:string='';
