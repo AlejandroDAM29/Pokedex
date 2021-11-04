@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Buscar Pokemon
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-toolbar>
+  <ion-searchbar placeholder="Busca tu pokemon favorito"
+                  animated
+                  (ionChange)="onSearchChange($event)"
+                  debounce="700"></ion-searchbar>
+                  
+                  
+</ion-toolbar>
+
+
+<ion-content >
+
+
+
+   <!--  <ion-list *ngIf="peliculas.length === 0"> -->
+    <ion-list *ngIf="value==='' else busqueda">
+      <ion-list-header >
+       <ion-label color="primary">Sugerencias de búsqueda</ion-label>
+      </ion-list-header>
+  
+      
+    <ion-item  *ngFor ="let idea of ideas">
+    <ion-label color="primary">{{idea}}</ion-label>
+  </ion-item>
+    </ion-list>
+
+    <ng-template #busqueda>
+
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6" *ngFor="let poke of pokemon">
+      
+            <ion-card>
+              <img [src]="poke.image" >
+      
+              <ion-card-header>
+                <ion-card-subtitle>#{{poke.pokeIndex}}</ion-card-subtitle>
+              </ion-card-header>
+      
+            </ion-card>
+           
+      
+      
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+    </ng-template>
+
+ 
+  
+  
+  
+  </ion-content>
+  
